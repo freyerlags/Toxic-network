@@ -1,1 +1,218 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+:root {
+  --primary: #ff1414;
+  --secondary: #ff3333;
+  --accent: #b90f0f;
+  --background: #000000;
+  --scrollbar-thumb-color: #F3F4F6;
+  --scrollbar-track-color: #2D2D2D;
+  --scrollbar-thumb-hover-color: #D1D5DB;
+}
+::selection {
+  background-color: var(--primary);
+  color: var(--background);
+}
+body {
+  background-color: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.search-container {
+  position: relative;
+  margin-bottom: 8rem;
+}
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  border-color: var(--secondary);
+}
+.recommendations {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  display: none;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+.recommendation-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--primary);
+}
+.recommendation-item:hover {
+  background: rgba(151, 0, 0, 0.349);
+}
+.settings-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+.settings-btn:hover {
+  color: var(--accent);
+}
+.settings-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  display: none;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  min-width: 300px;
+}
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.settings-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: -30px;
+  margin-left: -20px;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-top: -30px;
+  margin-right: -20px;
+  transition: all 0.3s ease;
+}
+.close-btn:hover {
+  color:  var(--accent);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 5;
+}
+.switch-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: .4s;
+  border-radius: 24px;
+  border: 1px solid var(--primary);
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--primary);
+  transition: .4s;
+  border-radius: 50%;
+}
+.slider:hover::before {
+  background-color: var(--accent);
+}
+input:checked + .slider {
+  background-color: var(--primary);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: white;
+}
+#display {
+  display: none;
+  position: fixed;
+  left: 0px;
+  z-index: 15;
+}
+.home-icon {
+  margin-left: 3%;
+}
+.settings-panel {
+  display: none;
+  z-index: 10;
+}
+iframe {
+  background-color: white;
+  border: none;
+}
