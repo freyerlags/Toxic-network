@@ -5,13 +5,13 @@
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
 :root {
-  --primary: #ff1414;
-  --secondary: #ff3333;
-  --accent: #b90f0f;
+  --primary: #0000FF;
+  --secondary: #0000FF;
+  --accent: #0000FF;
   --background: #000000;
-  --scrollbar-thumb-color: #F3F4F6;
-  --scrollbar-track-color: #2D2D2D;
-  --scrollbar-thumb-hover-color: #D1D5DB;
+  --scrollbar-thumb-color: ##0000FF;
+  --scrollbar-track-color: ##0000FF;
+  --scrollbar-thumb-hover-color: ##0000FF;
 }
 ::selection {
   background-color: var(--primary);
