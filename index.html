@@ -20,11 +20,10 @@
         <script defer src="/assets/JavaScript/main.js"></script>
 
 	<h1 class="title">Toxic-Network</h1>
-		<div class="container">
-            <div class="search-container">
-                <input class="search-input" placeholder="Enter URL" type="text" />
-                <div class="recommendations"></div>
-		    
+		 <form action="search_results.html" method="GET">
+        <input type="text" name="query" placeholder="Enter your search term..." required>
+        <input type="submit" value="Search">
+    </form>
 		    <div id="lines-jsx"></div>
 
 <script src="/assets/JavaScript/lines.jsx"></script>
